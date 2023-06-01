@@ -22,9 +22,9 @@ Route::get('/about-us', function () {
 Route::get('/contact', function () {
     return view('pages.contact');
 })->name('app.contact');
-Route::get('/course-details', function () {
-    return view('pages.course-details');
-})->name('app.course-details');
+Route::get('/post-detail', function () {
+    return view('pages.post-detail');
+})->name('app.post-detail');
 Route::get('/courses', function () {
     return view('pages.courses');
 })->name('app.courses');
@@ -43,3 +43,9 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('pages.register');
 })->name('app.register');
+Route::get('/blog-create', function () {
+    return view('pages.blog-create');
+})->name('app.blog-create');
+Route::get('/post-create', function () {
+    return view('pages.post-create');
+})->name('app.post-create');
