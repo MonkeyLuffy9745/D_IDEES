@@ -1,5 +1,7 @@
 @extends("layouts.base")
-
+<div style="display: none">
+    {{ $_blog = true }}
+</div>
 @section('base.content')
 
     <!--================Home Banner Area =================-->

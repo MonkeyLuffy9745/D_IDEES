@@ -2,7 +2,9 @@
 
 @section('main.content')
     <div>
-        <div>@include('components.navbar')</div>
+        <div>
+            @include('components.navbar')
+        </div>
         <div>
             @yield('base.content')
         </div>

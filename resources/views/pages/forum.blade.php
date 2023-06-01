@@ -1,5 +1,7 @@
 @extends("layouts.base")
-
+<div style="display: none">
+    {{ $_forum = true }}
+</div>
 @section('base.content')
 
     <!--================ Start Home Banner Area =================-->

@@ -1,5 +1,7 @@
 @extends('layouts.base')
-
+<div style="display: none">
+    {{ $_login = true }}
+</div>
 @section('base.content')
     <!--================ Start Home Banner Area =================-->
     <section class="home_banner_area">

@@ -24,41 +24,42 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav ml-auto">
-                        <li class="nav-item active">
+                        <li
+                            @isset($_index) class="nav-item active" @else class="nav-item" @endisset>
                             <a class="nav-link" href="{{ route('app.index') }}">Acceuil</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('app.courses') }}">Forum</a>
+                        <li @isset($_forum) class="nav-item active" @else class="nav-item" @endisset>
+                            <a class="nav-link" href="{{ route('app.forum') }}">Forum</a>
                         </li>
-                        <li class="nav-item">
+                        <li @isset($_blog) class="nav-item active" @else class="nav-item" @endisset>
                             <a class="nav-link" href="{{ route('app.blog') }}">Blog</a>
                         </li>
-                        <li class="nav-item">
+                        <li @isset($_about) class="nav-item active" @else class="nav-item" @endisset>
                             <a class="nav-link" href="{{ route('app.about-us') }}">A propos</a>
                         </li>
-                        <li class="nav-item">
+                        <li @isset($_contact) class="nav-item active" @else class="nav-item" @endisset>
                             <a class="nav-link" href="{{ route('app.contact') }}">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link search" id="search">
+                            <a href="/" class="nav-link search" id="search">
                                 <i class="ti-search"></i>
                             </a>
                         </li>
                         @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('app.login') }}">Se connecter</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('app.register') }}">S'enregistrer</a>
-                        </li>
+                            <li @isset($_login) class="nav-item active" @else class="nav-item" @endisset>
+                                <a class="nav-link" href="{{ route('app.login') }}">Se connecter</a>
+                            </li>
+                            <li @isset($_register) class="nav-item active" @else class="nav-item" @endisset>
+                                <a class="nav-link" href="{{ route('app.register') }}">S'enregistrer</a>
+                            </li>
                         @endguest
                         @auth
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('app.contact') }}">Se deconnecter</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('app.contact') }}">Profil</a>
-                        </li>
+                            <li @isset($_disconnect) class="nav-item active" @else class="nav-item" @endisset>
+                                <a class="nav-link" href="{{ route('app.contact') }}">Se deconnecter</a>
+                            </li>
+                            <li @isset($_profil) class="nav-item active" @else class="nav-item" @endisset>
+                                <a class="nav-link" href="{{ route('app.contact') }}">Profil</a>
+                            </li>
                         @endauth
                     </ul>
                 </div>
