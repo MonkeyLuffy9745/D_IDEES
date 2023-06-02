@@ -14,9 +14,9 @@
               <div class="banner_content text-center">
                 <h2>Post Details</h2>
                 <div class="page_link">
-                  <a href="index.html">Home</a>
-                  <a href="courses.html">Posts</a>
-                  <a href="course-details.html">post Details</a>
+                  <a href="{{ route('app.index') }}">Home</a>
+                  <a href="{{ route('forum.index') }}">Forum</a>
+                  <a href="{{ route('forum.show', $post) }}">post Details</a>
                 </div>
               </div>
             </div>
@@ -35,35 +35,17 @@
                         <img class="img-fluid" src="img/courses/course-details.jpg" alt="">
                     </div>
                     <div class="content_wrapper">
-                        <h4 class="title">Post</h4>
-                        <div class="content">
-                            When you enter into any new area of science, you almost always find yourself with a
-                            baffling new language of
-                            technical terms to learn before you can converse with the experts. This is certainly
-                            true in astronomy both in
-                            terms of terms that refer to the cosmos and terms that describe the tools of the trade,
-                            the most prevalent
-                            being the telescope.
-                            <br>
-                            <br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore
-                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                            ut aliquip ex ea
-                            commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum. Lorem ipsum dolor sit
-                            amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim
-                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat. Duis aute
-                            irure dolor in reprehenderit in voluptate velit esse cillum.
+                        <h4 class="title">{{ $post->title }}</h4>
+                        <div class="content">{{$post->content}}
                         </div>
 
                         <h4 class="title">Commentaires</h4>
                         <div class="comments-area mt-0 mb-30">
+                            @forelse ( $post->commentaires as $commentaire )
                                 @include('modules.comment-medium')
-                                @include('modules.comment-medium')
-                                @include('modules.comment-medium')
+                            @empty
+                                <p>Pas encore de commentaires</p>
+                            @endforelse
                         </div>
                     </div>
                 </div>

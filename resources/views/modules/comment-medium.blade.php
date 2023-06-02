@@ -6,11 +6,10 @@
                     <img src="img/blog/c1.jpg" alt="">
                 </div>
                 <div class="desc">
-                    <h5><a href="#">Emilly Blunt</a>
+                    <h5><a href="#">{{ $commentaire->user->last_name }} {{ $commentaire->user->first_name }}</a>
                     </h5>
                     <p class="comment">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore.
+                        {{$commentaire->content}}
                     </p>
                 </div>
             </div>

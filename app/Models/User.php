@@ -7,6 +7,7 @@ use App\Models\Post;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -40,7 +41,10 @@ class User extends Authenticatable
     ];
 
     public function posts(){
-        return $this->belongsTo(Post::class);
+        return $this->hasMany(Post::class);
+    }
+    public function commentaires(){
+        return $this->hasMany(Commentaire::class);
     }
 
     public function name(){

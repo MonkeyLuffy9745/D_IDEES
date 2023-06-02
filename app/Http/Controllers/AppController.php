@@ -37,7 +37,8 @@ class AppController extends Controller
     }
 
     public function forum(){
-        return view('pages.forum');
+        $posts=Post::where("notice", '')->orderBy("updated_at","desc")->paginate(5);
+        return view('pages.forum.index', ["posts" => $posts]);
     }
 
     public function blog(){

@@ -15,12 +15,7 @@
                 <a class="navbar-brand logo_h" href="{{ route('app.index') }}">
                     <h2>D_ZIDEES??</h2>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav ml-auto">
@@ -28,11 +23,11 @@
                             @isset($_index) class="nav-item active" @else class="nav-item" @endisset>
                             <a class="nav-link" href="{{ route('app.index') }}">Acceuil</a>
                         </li>
-                        <li @isset($_forum) class="nav-item active" @else class="nav-item" @endisset>
-                            <a class="nav-link" href="{{ route('app.forum') }}">Forum</a>
-                        </li>
                         <li @isset($_blog) class="nav-item active" @else class="nav-item" @endisset>
-                            <a class="nav-link" href="{{ route('app.blog') }}">Blog</a>
+                            <a class="nav-link" href="{{ route('blog.index') }}">Blog</a>
+                        </li>l
+                        <li @isset($_forum) class="nav-item active" @else class="nav-item" @endisset>
+                            <a class="nav-link" href="{{ route('forum.index') }}">Forum</a>
                         </li>
                         <li @isset($_about) class="nav-item active" @else class="nav-item" @endisset>
                             <a class="nav-link" href="{{ route('app.about-us') }}">A propos</a>
@@ -40,11 +35,11 @@
                         <li @isset($_contact) class="nav-item active" @else class="nav-item" @endisset>
                             <a class="nav-link" href="{{ route('app.contact') }}">Contact</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="/" class="nav-link search" id="search">
                                 <i class="ti-search"></i>
                             </a>
-                        </li>
+                        </li> --}}
                         @guest
                             <li @isset($_login) class="nav-item active" @else class="nav-item" @endisset>
                                 <a class="nav-link" href="{{ route('app.login') }}">Se connecter</a>

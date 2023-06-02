@@ -4,18 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\Cast\Int_;
 
-class PostController extends Controller
+class BlogController extends Controller
 {
-        /**
+    /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pages.forum.index');
-    }
-    public function blog(){
-        return view('pages.blog');
+        $posts=Post::where("notice", '')->where('type', 'article')->orderBy("created_at","desc")->paginate(2);
+        return view('pages.blog.index', [
+            "posts" => $posts,
+        ]);
     }
 
     /**
@@ -37,15 +38,16 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Int $id)
     {
-        return view('pages.forum.show', ["post" => $post]);
+            $post = Post::findOrFail($id);
+            return view('pages.forum.show', ["post" => $post]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Post $post)
     {
         //
     }
@@ -53,7 +55,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Post $post)
     {
         //
     }
@@ -61,7 +63,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Post $post)
     {
         //
     }

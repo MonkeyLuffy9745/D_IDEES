@@ -6,8 +6,8 @@
                 <ul class="d-flex w-100 justify-content-center text-center">
                     <li><a class="pr-5" href="{{ route('app.index') }}">Acceuil</a></li>
                     <li><a class="pr-5" href="{{ route('app.about-us') }}">A propos</a></li>
-                    <li><a class="pr-5" href="{{ route('app.forum') }}">Forum</a></li>
-                    <li><a class="pr-5" href="{{ route('app.blog') }}">Blog</a></li>
+                    {{-- <li><a class="pr-5" href="{{ route('blog.index') }}">Blog</a></li> --}}
+                    <li><a class="pr-5" href="{{ route('forum.index') }}">Forum</a></li>
                     <li><a class="pr-5" href="{{ route('app.contact') }}">Contact</a></li>
                 </ul>
             </div>
