@@ -16,20 +16,32 @@
                                         <div class="offset-lg-1">
                                             <div class="register_form">
                                                 <h2>Se connecter</h2>
-                                                <form class="form_area" id="myForm" action="mail.html" method="post">
+                                                <form action="{{ route('user.login') }}" method="post" class="form_area">
+                                                    @csrf
+                                                    @if (count($errors) > 0)
+                                                        <div class="p-0" style="color:red">
+                                                            <ul>
+                                                                @foreach ($errors->all() as $error)
+                                                                    <li>{{ $error }}</li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </div>
+                                                    @endif
                                                     <div class="row">
                                                         <div class="col-lg-12 form_group">
-                                                                <input name="email" placeholder="Email"
-                                                                    pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-                                                                    required="" type="email" />
-                                                            <input name="password" placeholder="Mot de Passe"
-                                                                required="" type="password" />
+                                                            <input name="email" placeholder="Email"
+                                                                pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                                                                required="" type="email" />
+                                                            <input name="password" placeholder="Mot de Passe" required=""
+                                                                type="password" />
                                                         </div>
                                                         <div class="col-lg-12 text-center">
-                                                            <button class="primary-btn">Connexion</button>
+                                                            <button class="primary-btn" type="submit">Connexion</button>
                                                         </div>
-                                                        <span class="text-center w-100 pt-4">Vous n'êtes pas encore inscrit ?
-                                                            <a href="{{ route('app.register') }}" style="color: #fdc632">S'enregitrer</a>
+                                                        <span class="text-center w-100 pt-4">Vous n'êtes pas encore inscrit
+                                                            ?
+                                                            <a href="{{ route('app.register') }}"
+                                                                style="color: #fdc632">S'enregitrer</a>
                                                         </span>
                                                     </div>
                                                 </form>

@@ -14,8 +14,8 @@
               <div class="banner_content text-center">
                 <h2>Contactez-Nous</h2>
                 <div class="page_link">
-                  <a href="index.html">Home</a>
-                  <a href="contact.html">Contact</a>
+                  <a href="{{ route('app.index') }}">Home</a>
+                  <a href="{{ route('app.contact') }}">Contact</a>
                 </div>
               </div>
             </div>

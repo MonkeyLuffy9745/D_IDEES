@@ -50,7 +50,7 @@
                         @endguest
                         @auth
                             <li @isset($_disconnect) class="nav-item active" @else class="nav-item" @endisset>
-                                <a class="nav-link" href="{{ route('app.contact') }}">Se deconnecter</a>
+                                <a class="nav-link" href="{{ route('app.logout') }}">Se deconnecter</a>
                             </li>
                             <li @isset($_profil) class="nav-item active" @else class="nav-item" @endisset>
                                 <a class="nav-link" href="{{ route('app.contact') }}">Profil</a>

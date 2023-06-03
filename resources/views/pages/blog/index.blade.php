@@ -1,30 +1,30 @@
-@extends("layouts.base")
+@extends('layouts.base')
 
 <div style="display: none">
     {{ $_blog = true }}
 </div>
 
 @section('base.content')
-
     <!--================ Start Home Banner Area =================-->
-    <section class="home_banner_area">
-      <div class="banner_inner">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="banner_content text-center">
-                <p class="text-uppercase">
-                  Les Meilleurs diplomes se trouvent ici
-                </p>
-                <h2 class="text-uppercase mt-4 mb-5">
-                  Un pas de plus vers votre rève
-                </h2>
-
-              </div>
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="banner_content text-center">
+                            <h2 class="text-uppercase mt-4 mb-5">
+                                Blog
+                            </h2>
+                            <div class="page_link">
+                                <a href="{{ route('app.index') }}">Home</a>
+                                <a href="{{ route('blog.index') }}">Blog</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
     <!--================ End Home Banner Area =================-->
 
@@ -35,7 +35,7 @@
                 <div class="col-lg-8">
                     <div class="blog_left_sidebar">
                         @forelse ($posts as $post)
-                            @include("modules.post-medium")
+                            @include('modules.post-medium')
                         @empty
                             Aucun Article
                         @endforelse

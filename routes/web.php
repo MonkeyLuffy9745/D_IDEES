@@ -23,6 +23,8 @@ Route::get('/', [AppController::class, "index"])->name('app.index');
 Route::get('/about-us', [AppController::class, 'about_us'])->name('app.about-us');
 Route::get('/contact', [AppController::class, 'contact_us'])->name('app.contact');
 Route::get('/login', [AppController::class,'login'])->name('app.login');
+Route::post('/login', [UserController::class,'login'])->name('user.login');
+Route::get('/logout', [AppController::class,'logout'])->name('app.logout')->middleware("auth");
 Route::get('/register', [AppController::class, 'register'])->name('app.register');
 
 // Route::get('/blog', [CommentController::class, 'blog'])->name('app.blog');
@@ -30,7 +32,7 @@ Route::get('/register', [AppController::class, 'register'])->name('app.register'
 Route::resource("/forum",ForumController::class);
 Route::resource("/blog",BlogController::class);
 // Route::resource("/comment",CommentController::class);
-// Route::resource("/user",UserController::class);
+ Route::resource("/user",UserController::class);
 
 
 // Route::get('/post-detail/{post}', function (Post $post) {
