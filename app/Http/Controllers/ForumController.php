@@ -35,7 +35,18 @@ class ForumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $title = $request->input("title");
+        $content = $request->input("content");
+
+        $post = Post::create([
+            "title" => $title,
+            "content" => $content,
+            "notice" => "",
+            "type" => "post",
+            "user_id" => auth()->user()->id
+        ]);
+
+        return redirect()->route("forum.index");
     }
 
     /**

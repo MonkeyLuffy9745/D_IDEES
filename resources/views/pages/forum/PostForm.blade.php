@@ -33,10 +33,10 @@
                 <div class="col-lg-8 posts-list">
                     <div class="comment-form mt-0">
                         <h4>Créer un Post</h4>
-                        <form class="">
+                        <form class="" action="{{ route('forum.store') }}" method="POST">
                             <div class="form-group form-inline">
                                 <div class="form-group w-100 name">
-                                    <input type="text" class="form-control" id="title" placeholder="Titre" onfocus="this.placeholder = ''"
+                                    <input name="title" type="text" class="form-control" id="title" placeholder="Titre" onfocus="this.placeholder = ''"
                                         onblur="this.placeholder = 'Titre'">
                                 </div>
                             </div>
