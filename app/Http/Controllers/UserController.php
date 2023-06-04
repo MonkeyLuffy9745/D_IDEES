@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -54,7 +55,7 @@ class UserController extends Controller
             $user->last_name       = $request->get('last_name');
             $user->first_name       = $request->get('first_name');
             $user->email       = $request->get('email');
-            $user->password       = $request->get('password');
+            $user->password       = Hash::make($request->get('password'));
             $user->number       = $request->get('number');
             $user->institut       = $request->get('institut');
             $user->birth_date       = $request->get('birth_date');
@@ -82,10 +83,9 @@ class UserController extends Controller
                 ->withErrors($validator)
                 ->withInput($request->except('password'));
         }
-        $user = User::all()->where('email', $request->email)
-        ->where("password", $request->password)
-        ->first();
-        if($user){
+        $user = User::all()->where('email', $request->email)->first();
+
+        if(Auth::attempt(["email" => $request->input("email"), "password" => $request->input("password")])){
             Auth::login($user);
             return redirect(route("app.index"));
         }

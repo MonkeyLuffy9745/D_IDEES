@@ -50,4 +50,7 @@ class User extends Authenticatable
     public function name(){
         return $this->last_name." ".$this->first_name;
     }
+    public function getNameAttribute(){
+        return $this->last_name." ".$this->first_name;
+    }
 }

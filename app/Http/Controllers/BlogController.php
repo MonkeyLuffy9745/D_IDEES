@@ -11,9 +11,17 @@ class BlogController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts=Post::where("notice", '')->where('type', 'article')->orderBy("created_at","desc")->paginate(2);
+        $query = Post::query()->orderBy('updated_at', "DESC");
+
+        if (isset($request["post_search"])) {
+            $name = $request->input('post_search');
+            $query = $query->where('title', 'like', "%{$name}%");
+        }
+
+        $posts = $query->where("notice", '')->where('type', 'article')->orderBy("created_at","desc")->paginate(5);
+
         return view('pages.blog.index', [
             "posts" => $posts,
         ]);

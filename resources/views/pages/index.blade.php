@@ -13,8 +13,9 @@
                     <div class="col-lg-12">
                         <div class="banner_content text-center">
                             <h2 class="text-uppercase mt-5 mb-5">
-                                Bienvenue !!!
+                                Bienvenue
                             </h2>
+                            <p>sur des D_ZIDEES</p>
                         </div>
                     </div>
                 </div>
@@ -44,10 +45,9 @@
                     <div class="single_feature">
                         <div class="icon"><span class="flaticon-student"></span></div>
                         <div class="desc">
-                            <h4 class="mt-3 mb-2">Centre</h4>
+                            <h4 class="mt-3 mb-2">Diplome</h4>
                             <p>
-                                One make creepeth, man bearing theira firmament won't great
-                                heaven
+                                Nous offrons des Diplômes qui sont reconnus dans tout le pays. Nous avons des partenariatsa travers le monde
                             </p>
                         </div>
                     </div>
@@ -57,10 +57,9 @@
                     <div class="single_feature">
                         <div class="icon"><span class="flaticon-book"></span></div>
                         <div class="desc">
-                            <h4 class="mt-3 mb-2">Sell Online Course</h4>
+                            <h4 class="mt-3 mb-2">Questions en ligne</h4>
                             <p>
-                                One make creepeth, man bearing theira firmament won't great
-                                heaven
+                                Si vous avez des difficultés dans vos cours, vous povez poser des questions ici
                             </p>
                         </div>
                     </div>
@@ -70,10 +69,9 @@
                     <div class="single_feature">
                         <div class="icon"><span class="flaticon-earth"></span></div>
                         <div class="desc">
-                            <h4 class="mt-3 mb-2">Global Certification</h4>
+                            <h4 class="mt-3 mb-2">Articles</h4>
                             <p>
-                                One make creepeth, man bearing theira firmament won't great
-                                heaven
+                                Nous avons des articles sur notre campus publier regulierement sur cette plateforme
                             </p>
                         </div>
                     </div>
