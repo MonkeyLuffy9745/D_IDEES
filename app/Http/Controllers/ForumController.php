@@ -37,8 +37,12 @@ class ForumController extends Controller
      */
     public function create()
     {
-        $post = new Post();
-        return view('pages.forum.PostForm', ["post" => $post]);
+        if(auth()->user()){
+            $post = new Post();
+            return view('pages.forum.PostForm', ["post" => $post]);
+        }else{
+            return redirect()->route('app.login');
+        }
     }
 
     /**

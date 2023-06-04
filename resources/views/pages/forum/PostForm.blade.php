@@ -15,8 +15,8 @@
                 <h2>Blog Create</h2>
                 <div class="page_link">
                   <a href="index.html">Home</a>
-                  <a href="blog.html">Blog</a>
-                  <a href="single-blog.html">Blog Create</a>
+                  <a href="blog.html">Forum</a>
+                  <a href="single-blog.html">creation d'un post</a>
                 </div>
               </div>
             </div>
@@ -34,6 +34,7 @@
                     <div class="comment-form mt-0">
                         <h4>Créer un Post</h4>
                         <form class="" action="{{ route('forum.store') }}" method="POST">
+                            @csrf
                             <div class="form-group form-inline">
                                 <div class="form-group w-100 name">
                                     <input name="title" type="text" class="form-control" id="title" placeholder="Titre" onfocus="this.placeholder = ''"
@@ -44,7 +45,7 @@
                                 <textarea class="form-control mb-10" rows="5" style="resize: vertical; height: 300px;" name="content" placeholder="Message"
                                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required=""></textarea>
                             </div>
-                            <a href="#" class="primary-btn w-100">Poster</a>
+                            <button type="submit" class="primary-btn w-100">Poster</button>
                         </form>
                     </div>
                 </div>
