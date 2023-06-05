@@ -35,9 +35,9 @@ Route::resource("/comment",CommentController::class);
 Route::resource("/user",UserController::class);
 
 
-// Route::get('/post-detail/{post}', function (Post $post) {
-//     return view('pages.forum.show', ["post" => $post]);
-// })->name('app.post-detail');
+Route::get('/profil', function (    ) {
+    return view('pages.profil');
+})->name('app.profil');
 
 // Route::get('/elements', function () {
 //     return view('pages.elements');

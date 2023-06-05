@@ -1,132 +1,169 @@
-    @extends("layouts.base")
-<div style="display: none">
-    {{ $_contact = true }}
-</div>
+@extends('layouts.base')
+
 @section('base.content')
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-    <!--================Home Banner Area =================-->
-    <section class="banner_area">
-      <div class="banner_inner d-flex align-items-center">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-6">
-              <div class="banner_content text-center">
-                <h2>Contactez-Nous</h2>
-                <div class="page_link">
-                  <a href="{{ route('app.index') }}">Accueil</a>
-                  <a href="{{ route('app.contact') }}">Contact</a>
+<div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                       {{}}
+                                    </h5>
+                                    <h6>
+                                        Web Developer and Designer
+                                    </h6>
+                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================End Home Banner Area =================-->
-
-    <!--================Contact Area =================-->
-    <section class="contact_area section_gap">
-      <div class="container">
-        <div
-          id="mapBox"
-          class="mapBox"
-          data-lat="6.231421542577746"
-          data-lon="1.1017763618372123"
-          data-zoom="13"
-          data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
-          data-mlat="6.231421542577746"
-          data-mlon="1.1017763618372123"
-        ></div>
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="contact_info">
-              <div class="info_item">
-                <i class="ti-home"></i>
-                <h6>Sanguera, TOGO</h6>
-                <br>
-              </div>
-              <div class="info_item">
-                <i class="ti-headphone"></i>
-                <h6><a href="#">+228 91727717</a></h6>
-                <br>
-              </div>
-              <div class="info_item">
-                <i class="ti-email"></i>
-                <h6><a href="#">ucaouut@gmail.com</a></h6>
-                <br>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-9">
-            <form
-              class="row contact_form"
-              action="contact_process.php"
-              method="post"
-              id="contactForm"
-              novalidate="novalidate"
-            >
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    name="name"
-                    placeholder="votre nom"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'votre nom'"
-                    required=""
-                  />
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>WORK LINK</p>
+                            <a href="">Website Link</a><br/>
+                            <a href="">Bootsnipp Profile</a><br/>
+                            <a href="">Bootply Profile</a>
+                            <p>SKILLS</p>
+                            <a href="">Web Designer</a><br/>
+                            <a href="">Web Developer</a><br/>
+                            <a href="">WordPress</a><br/>
+                            <a href="">WooCommerce</a><br/>
+                            <a href="">PHP, .Net</a><br/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>User Id</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Kshiti123</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Kshiti Ghelani</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>kshitighelani@gmail.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>123 456 7890</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Profession</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Web Developer and Designer</p>
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Experience</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Expert</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Hourly Rate</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>10$/hr</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Total Projects</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>230</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>English Level</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Expert</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Availability</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>6 months</p>
+                                            </div>
+                                        </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Your Bio</label><br/>
+                                        <p>Your detail description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    placeholder="Entrer votre mail"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Entrer votre mail'"
-                    required=""
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="subject"
-                    name="subject"
-                    placeholder="Sujet"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'sujet'"
-                    required=""
-                  />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <textarea
-                    class="form-control"
-                    name="message"
-                    id="message"
-                    rows="1"
-                    placeholder="Entrer un Message"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Entrer un Message'"
-                    required=""
-                  ></textarea>
-                </div>
-              </div>
-              <div class="col-md-12 text-right">
-                <button type="submit" value="submit" class="btn primary-btn">
-                  envoyer
-                </button>
-              </div>
             </form>
-          </div>
         </div>
-      </div>
-    </section>
-    <!--================Contact Area =================-->
-@endsection
+        <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    @endsection

@@ -29,7 +29,7 @@
                         <li @isset($_forum) class="nav-item active" @else class="nav-item" @endisset>
                             <a class="nav-link" href="{{ route('forum.index') }}">Forum</a>
                         </li>
-                        <li @isset($_about) class="nav-item active" @else class="nav-item" @endisset>
+                        <li @isset($_about) class="nav-item active, ["post" => $post]" @else class="nav-item" @endisset>
                             <a class="nav-link" href="{{ route('app.about-us') }}">A propos</a>
                         </li>
                         <li @isset($_contact) class="nav-item active" @else class="nav-item" @endisset>
@@ -53,7 +53,7 @@
                                 <a class="nav-link" href="{{ route('app.logout') }}">Se deconnecter</a>
                             </li>
                             <li @isset($_profil) class="nav-item active" @else class="nav-item" @endisset>
-                                <a class="nav-link" href="{{ route('app.contact') }}">Profil</a>
+                                <a class="nav-link" href="{{ route('app.profil') }}">Profil</a>
                             </li>
                         @endauth
                     </ul>
