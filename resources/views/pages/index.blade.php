@@ -87,6 +87,7 @@
                         <div class="">
                             <h2 class="mb-3">- Pas de Posts pour l'instant -</h2>
                         </div>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -114,7 +115,7 @@
             </div>
         </div>
     @endif
-
+<br>
     <div class="section_gap registration_area">
         <div class="container">
             <div class="row align-items-center">
