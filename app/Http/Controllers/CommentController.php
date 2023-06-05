@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Commentaire;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -27,7 +29,16 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post_id = $request->input('post_id');
+        $content = $request->input("content");
+        $post = Commentaire::create([
+            "content" => $content,
+            "notice" => "",
+            "user_id" =>auth()->user()->id,
+            "post_id" => $post_id
+        ]);
+
+        return redirect()->route("forum.show", $post_id);
     }
 
     /**

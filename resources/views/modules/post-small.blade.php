@@ -6,7 +6,7 @@
 
       <span class="tag mb-4 d-inline-block">{{ $post->created_at }}</span>
       <h4 class="mb-3">
-          <a href="course-details.html">{{ $post->title }}</a>
+          <a href="{{ route('forum.index') }}">{{ $post->title }}</a>
     </h4>
       <p>
         {{ $post->content }}

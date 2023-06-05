@@ -52,9 +52,11 @@
 
                                 </div><!-- /input-group -->
                                 <div class="br"></div>
+                                @auth
                                 <a class="primary-btn" href="{{ route('forum.create') }}">
                                     Creer un post <i class="ti-arrow-right ml-1"></i>
                                   </a>
+                                @endauth
                             </aside>
                         </div>
                     </form>

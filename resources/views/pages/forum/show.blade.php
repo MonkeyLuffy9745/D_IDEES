@@ -51,26 +51,32 @@
                 </div>
 
 
-                <div class="col-lg-4 right-contents">
-                    <ul>
-                    </ul>
-
-                    <h4 class="title">Commentaire</h4>
-                    <div class="content">
-                        <div class="review-top row pt-40">
-                            <div class="col-lg-12">
+                    <div class="col-lg-4 right-contents">
+                        <ul>
+                        </ul>
+                        @auth
+                        <h4 class="title">Commentaire</h4>
+                        <div class="content">
+                            <div class="review-top row pt-40">
+                                <div class="col-lg-12">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="feedeback">
-                            <h6>Contenu</h6>
-                            <textarea name="feedback" class="form-control" cols="10" rows="10"></textarea>
-                            <div class="mt-10 text-right">
-                                <a href="#" class="primary-btn2 text-right rounded-0 text-white">envoyer</a>
+                        <form class="" action="{{ route('comment.store') }}" method="POST">
+                            @csrf
+                            <div class="feedeback">
+                                <h6>Contenu</h6>
+                                <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                <textarea name="content" class="form-control" cols="10" rows="10"></textarea>
+                                <div class="mt-10 text-right">
+                                    <button type="submit" class="primary-btn w-100">Poster</button>
+                                </div>
+                        </form>
                             </div>
+                        @endauth
                         </div>
                     </div>
-                </div>
+
             </div>
         </div>
     </section>

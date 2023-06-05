@@ -14,7 +14,7 @@
               <div class="banner_content text-center">
                 <h2>Contactez-Nous</h2>
                 <div class="page_link">
-                  <a href="{{ route('app.index') }}">Home</a>
+                  <a href="{{ route('app.index') }}">Accueil</a>
                   <a href="{{ route('app.contact') }}">Contact</a>
                 </div>
               </div>
@@ -97,7 +97,7 @@
                     class="form-control"
                     id="subject"
                     name="subject"
-                    placeholder="Suejt"
+                    placeholder="Sujet"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'sujet'"
                     required=""

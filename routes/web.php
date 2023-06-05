@@ -31,8 +31,8 @@ Route::get('/register', [AppController::class, 'register'])->name('app.register'
 
 Route::resource("/forum",ForumController::class);
 Route::resource("/blog",BlogController::class);
-// Route::resource("/comment",CommentController::class);
- Route::resource("/user",UserController::class);
+Route::resource("/comment",CommentController::class);
+Route::resource("/user",UserController::class);
 
 
 // Route::get('/post-detail/{post}', function (Post $post) {
