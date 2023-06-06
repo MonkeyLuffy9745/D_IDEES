@@ -12,9 +12,9 @@
         <div class="blog_post">
             <img src="img/blog/main-blog/m-blog-1.jpg" alt="">
             <div class="blog_details">
-                <a href="single-blog.html">
+
                     <h2>{{ $post->title }}</h2>
-                </a>
+
                 <p>{{ $post->content }}</p>
                 <a href="{{ route('forum.show', $post) }}" class="blog_btn">Plus</a>
             </div>

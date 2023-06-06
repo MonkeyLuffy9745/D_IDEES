@@ -147,26 +147,6 @@
                     </div>
                 </div>
                 <div class="col-lg-4 offset-lg-1">
-                    <div class="register_form">
-                        <h2>Login</h2>
-                        <form class="form_area" id="myForm" action="mail.html" method="post">
-                            <div class="row">
-                                <div class="col-lg-12 form_group">
-                                    <input name="name" placeholder="Your Name" required="" type="text" />
-                                    <input name="name" placeholder="Your Phone Number" required="" type="tel" />
-                                    <input name="email" placeholder="Your Email Address"
-                                        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required=""
-                                        type="email" />
-                                </div>
-                                <div class="col-lg-12 text-center">
-                                    <button class="primary-btn">Connexion</button>
-                                </div>
-                                <br>
-                                <br>
-                                <span class="text-center w-100">vous etes déja inscrits ? </span>
-                            </div>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
