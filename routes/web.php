@@ -35,8 +35,10 @@ Route::resource("/comment",CommentController::class);
 Route::resource("/user",UserController::class);
 
 
-Route::get('/profil', function (    ) {
-    return view('pages.profil');
+Route::get('/profil', function () {
+    $posts=Post::where('user_id',auth()->user()->id)->get();
+    return view('pages.profil',
+    ['posts'=>$posts]);
 })->name('app.profil');
 
 // Route::get('/elements', function () {
